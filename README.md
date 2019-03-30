@@ -1,8 +1,6 @@
 # NestedScrolling机制学习
 来张图镇个楼
 
-一课-教学研发 > 19.3.30-张飞-nestedScroll原理分享 > image2019-3-30_16-16-9.png
-
 背景
 有关嵌套滑动的类大多直接继承现有的ViewGroup。例如StickyNavLayoutCopy.java。直接处理dispatchTouchEvent，onInterceptTouchEvent，onTouchEvent方法，当父视图拦截了本事件序列当前event后，若要想把事件传递给子视图处理下后面事件的话就是不可能的了，有以下方法可以继续交给子View处理此事件了：
 1.在onTouchEvent()中找到相应的子view分发给其事件
@@ -186,10 +184,6 @@ getNestedScrollAxes
 
 源码分析
 Api21以后的sdk里view和viewgroup的源码里会有相应方法，具体的代码可以直接看相关方法，同时也可参考NestedScrollView（既是Child又是Parent）和RecyclerView（Child）.
-
-一课-教学研发 > 19.3.30-张飞-nestedScroll原理分享 > image2019-3-30_16-42-52.png
-
-一课-教学研发 > 19.3.30-张飞-nestedScroll原理分享 > image2019-3-30_16-43-9.png
 
 
 
