@@ -1,9 +1,6 @@
 package com.luffy.nestlistedview;
 
 import android.content.Context;
-import android.support.v4.view.NestedScrollingChild;
-import android.support.v4.view.NestedScrollingParent;
-import android.support.v4.view.NestedScrollingParentHelper;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +8,11 @@ import android.view.ViewConfiguration;
 import android.widget.RelativeLayout;
 import android.widget.Scroller;
 
-public class NestedScrollParentLayout extends RelativeLayout implements NestedScrollingParent,NestedScrollingChild {
+import androidx.core.view.NestedScrollingChild;
+import androidx.core.view.NestedScrollingParent;
+import androidx.core.view.NestedScrollingParentHelper;
+
+public class NestedScrollParentLayout extends RelativeLayout implements NestedScrollingParent, NestedScrollingChild {
     private NestedScrollingParentHelper mParentHelper;
     private int mTitleHeight;
     private View mTitleTabView;
@@ -35,6 +36,7 @@ public class NestedScrollParentLayout extends RelativeLayout implements NestedSc
     //获取子view
     @Override
     protected void onFinishInflate() {
+        super.onFinishInflate();
         mTitleTabView = this.findViewById(R.id.title_container);
     }
 
